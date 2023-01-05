@@ -25,8 +25,9 @@ export class UsersService {
 
   public createUser(body: CreateUserDto): Promise<Users> {
     const user: Users = new Users();
-    user.first_name = body.first_name;
-    user.last_name = body.last_name;
+
+    user.first_name = body.firstName;
+    user.last_name = body.lastName;
     user.email = body.email;
     user.password = body.password;
 

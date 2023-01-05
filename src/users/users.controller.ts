@@ -14,6 +14,11 @@ import { CreateUserDto } from './user.dto';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
+  @Get()
+  public getUsers() {
+    return this.usersService.findAll();
+  }
+
   @Get(':id')
   public getUser(@Param('id', ParseIntPipe) id: number): Promise<Users> {
     return this.usersService.findOne(id);
